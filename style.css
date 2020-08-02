@@ -1,0 +1,155 @@
+input::-webkit-input-placeholder {color:rgba(189, 199, 216, 0.514);font-style:italic;}
+input::-moz-placeholder          {color:rgba(189, 199, 216, 0.514);font-style:italic;}
+input:-moz-placeholder           {color:rgba(189, 199, 216, 0.514);font-style:italic;}
+input:-ms-input-placeholder      {color:rgba(189, 199, 216, 0.514);font-style:italic;}
+ 
+
+h1{  
+    margin: 0; 
+    padding: 10px;
+}  
+.background{  
+    background-color:  rgb(235,237,240);
+    width:60%; 
+    min-width: 450px;  
+    min-height: 1000px;
+    margin: 0 auto; 
+    color: white; 
+    text-align: center;
+} 
+.container{    
+    border: 1px solid  rgb(189,199,216); 
+    border-radius: 5px;
+    width: 80%; 
+    margin: 0 auto;
+    display: grid; 
+    grid-template-columns:1fr 5fr 1fr ; 
+    grid-template-rows:50px ;
+}  
+.leftRow{    
+    border: none; 
+    min-width: 40px;
+    width: 100%; 
+    height: 100%;  
+}    
+.leftTaskRow{    
+    border: none; 
+    min-width: 40px;
+    width: 100%; 
+    height: 100%;  
+}   
+.chekMark{  
+    pointer-events: none;/* закрывает собой кнопку, делаем некликабельным */ 
+    width: 10px; 
+    height: 20px; 
+    border: solid rgba(189, 199, 216, 0.514);
+    border-width: 0 3px 3px 0;
+    display: inline-block; 
+    position: relative; 
+    left: 0; 
+    top: 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); 
+    
+}
+.input{     
+    color:rgb(75,103,151); 
+    font-size: 18px; 
+    font-weight: bold;  
+    border: 0;
+}    
+.add{  
+    border: none;
+    color:rgb(75,103,151); 
+    font-weight: bold; 
+    font-size: 18px; 
+}
+.delete{   
+    border: none;
+    width: 100%; 
+    height: 100%; 
+}   
+.deleteSymb{     
+    position: relative;   
+    margin: 0 auto; 
+    width: 15px;
+    bottom: 3px;
+    pointer-events: none;/* закрывает собой кнопку, делаем некликабельным */
+    color: rgba(189, 199, 216, 0.514);  
+    font-size: 40px; 
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);   
+}  
+.container:hover .deleteSymb{  
+    color: rgb(200, 124, 124); 
+}   
+.container:hover .delete{  
+    background-color: rgb(236, 230, 230);
+}  
+.container:hover .chekMark{ 
+    border: solid rgb(100, 161, 110); 
+    border-width: 0 3px 3px 0;
+}   
+.container:hover .leftTaskRow{ 
+    background-color: rgb(226, 240, 228);
+} 
+.doneTask{    
+    background-color: rgb(226, 240, 228);    
+    border-color: rgb(73, 158, 52); 
+    color:rgb(73, 158, 52);  
+   
+}  
+.doneTaskInput{ 
+    text-decoration: line-through;
+    color:rgb(73, 158, 52);  
+    background-color:rgb(226, 240, 228); 
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* 
+ 
+ 
+ 
+.background{  
+    background-color:  rgb(235,237,240);
+    width:70%;  
+    min-height: 1000px;
+    margin: 0 auto; 
+    color: white; 
+    text-align: center;
+} 
+.input{    
+    position: relative;
+    width: 80%; 
+    height: 40px;
+    border: 1px solid rgb(189,199,216);  
+    border-radius: 5px; 
+    font-size: 18px; 
+    font-weight: bold; 
+    color:rgb(75,103,151) ;
+    
+} 
+.flex{ 
+    width: 80%; 
+    margin: 0 auto;
+} */
