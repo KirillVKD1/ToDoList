@@ -11,8 +11,8 @@ h1{
 .background{  
     background-color:  rgb(235,237,240);
     width:60%; 
-    /* min-width: 450px;
-    min-height: 1000px; */
+    min-width: 450px;
+    min-height: 1000px;
     margin: 0 auto; 
     color: white; 
     text-align: center;
