@@ -11,8 +11,8 @@ h1{
 .background{  
     background-color:  rgb(235,237,240);
     width:60%; 
-    /* min-width: 450px;   */
-    min-height: 1000px;
+    /* min-width: 450px;
+    min-height: 1000px; */
     margin: 0 auto; 
     color: white; 
     text-align: center;
@@ -108,13 +108,4 @@ h1{
     text-decoration: line-through;
     color:rgb(73, 158, 52);  
     background-color:rgb(226, 240, 228); 
-<<<<<<< HEAD
-}
-=======
 } 
-
-
-@media screen and (max-width:321px){
-body{width:100px}
-}
->>>>>>> 1b69d45d800029991d1e1c8594b04d1fe3bec779
