@@ -1,57 +1,59 @@
-const getInput = document.querySelector('.input');
-const getButton = document.querySelector('.add');
+const input = document.querySelector('.input');
+const button = document.querySelector('.add');
 const tasksArea = document.querySelector('.background');
-const task = document.querySelector('.container')
-
+const task = document.querySelector('.container');
 
 const createTask = (todo) => {
     let div = document.createElement('div');
     div.className = 'container';
     div.innerHTML = `
-    <button  class="leftTaskRow"><div class="chekMark"></div></button>
-    <input value ='${todo}' placeholder="  enter" class="input" />
-    <button class="delete"><div class ="deleteSymb">+</div></button>`;
+    <button class="left-task-row">
+        <div class="chek-mark"></div>
+    </button>
+    <input value='${todo}'class="dynamic-input"/>
+    <button class="delete">
+        <div class="delete-symb">+</div>
+    </button>`;
     tasksArea.append(div);//добавить последним
 };
 
 const addTask = () => {
-    const todo = getInput.value.trim();//trim - удаляет пробелы с начала и конца
-    getInput.value = "";
+    const todo = input.value.trim();//trim - удаляет пробелы с начала и конца
+    input.value = "";
     if (todo.length) {
         createTask(todo);
     }
 };
 
-
-//ADD BUTTON
-getButton.addEventListener('click', addTask);
-
-//ENTER KEY
-getInput.addEventListener('keydown', (e) => {
-    if (e.keyCode == 13) addTask();
-});
-
-
-
-///DELETE TASK
 const deleteTask = (e) => {
     if (e.target.classList.contains('delete')) {//имел ли нажатый элемент класс, содержащий в названии delete
         e.target.parentElement.remove();//удалить родителя этого элемента
     }
 }
 
-tasksArea.addEventListener('click', deleteTask);//eventListener не увидит элемент страницы, не существовавший изначально,необходимо отследить было ли нажатие у родителя созданного элемента и потом определить где именно было нажатие
-
- 
-
 //Done tasks CSS
-const doneTask = (e) => {debugger
-    if (e.target.classList.contains('leftTaskRow')) {//имел ли нажатый элемент класс, содержащий в названии delete
-        e.target.parentElement.classList.toggle('doneTask');//
-        e.target.classList.toggle('doneTask'); 
-        e.target.parentElement.childNodes[3].classList.toggle('doneTaskInput');  
-        e.target.parentElement.childNodes[1].childNodes[0].classList.toggle('doneTask');  
+const doneTask = (e) => {
+    if (e.target.classList.contains('left-task-row')) {//имел ли нажатый элемент класс, содержащий в названии delete
+        e.target.parentElement.classList.toggle('done-task');//
+        e.target.classList.toggle('done-task');
+        e.target.parentElement.childNodes[3].classList.toggle('done-task-input');
+        e.target.parentElement.childNodes[1].childNodes[1].classList.toggle('done-task');
+    }
+}
+
+
+const deleteEmptyTask = (e) => {
+    if (e.target.value.trim() == "" && e.target.classList.contains('dynamic-input')) {
+        e.target.parentElement.remove();
     }
 } 
 
-tasksArea.addEventListener('click', doneTask);
+//ADD BUTTON
+button.addEventListener('click', addTask);
+//ENTER KEY
+input.addEventListener('keydown', (e) => {
+    if (e.keyCode == 13) addTask();
+});
+tasksArea.addEventListener('click', deleteTask);//eventListener не увидит элемент страницы, не существовавший изначально,необходимо отследить было ли нажатие у родителя созданного элемента и потом определить где именно было нажатие
+tasksArea.addEventListener('click', doneTask);  
+document.addEventListener('change', deleteEmptyTask);
