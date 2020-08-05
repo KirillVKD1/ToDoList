@@ -1,5 +1,5 @@
-const getInput = document.querySelector('.input');
-const getButton = document.querySelector('.add');
+const getInput = document.querySelector('.input'); // переменная не должна быть глаголом
+const getButton = document.querySelector('.add'); // переменная не должна быть глаголом
 const tasksArea = document.querySelector('.background');
 const task = document.querySelector('.container')
 
@@ -7,10 +7,10 @@ const task = document.querySelector('.container')
 const createTask = (todo) => {
     let div = document.createElement('div');
     div.className = 'container';
-    div.innerHTML = `
+    div.innerHTML = ` 
     <button  class="leftTaskRow"><div class="chekMark"></div></button>
-    <input value ='${todo}' placeholder="  enter" class="input" />
-    <button class="delete"><div class ="deleteSymb">+</div></button>`;
+    <input value ='${todo}' placeholder="  enter" class="input" /> 
+    <button class="delete"><div class ="deleteSymb">+</div></button>`; // Небходимо отформатировать этот код чтобы было более читабельнее + не нужные пробелы в атрибуте placeholder
     tasksArea.append(div);//добавить последним
 };
 
@@ -54,4 +54,4 @@ const doneTask = (e) => {debugger
     }
 } 
 
-tasksArea.addEventListener('click', doneTask);
+tasksArea.addEventListener('click', doneTask); // необходимо всех слушателей указать в одном месте, не разбрасывая их после каждой функции
